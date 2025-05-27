@@ -20,15 +20,27 @@ export class ProviderService {
         return await this.repository.inserirProvider(providerData);
     }
 
-    async buscarProviderPorId(id: number): Promise<ProviderPet | undefined> {
-        const produto = await this.repository.buscarPorId(id);
-
-        if (!produto) {
-            throw { id: 404, msg: "Produto não encontrado" }; // Lança erro aqui
+    async buscarPorIdProvider(id: number): Promise<ProviderPet> {
+        const provider = await this.repository.buscarPorIdProvider(id);
+        if (!provider) {
+            throw { status: 404, message: "Provider não encontrado" };
         }
-        return produto;
+        return provider;
     }
 
+    async atualizarProvider(id: number, dados: Partial<ProviderPet>): Promise<ProviderPet> {
+        const providerAtualizado = await this.repository.atualizarProvider(id, dados);
+        if (!providerAtualizado) {
+            throw { status: 404, message: "Provider não encontrado para atualizar" };
+        }
+        return providerAtualizado;
+    }
 
-
+    async deletarProvider(id: number): Promise<ProviderPet> {
+        const providerDeletado = await this.repository.deletarProvider(id);
+        if (!providerDeletado) {
+            throw { status: 404, message: "Provider não encontrado para deletar" };
+        }
+        return providerDeletado;
+    }
 }

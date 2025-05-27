@@ -24,7 +24,12 @@ export class ProviderRepository {
     }
 
     async buscarPorIdProvider(id: number): Promise<ProviderPet | null > {
-        return await this.repo.findOneBy({ id });
+        const provider = await this.repo.findOne({
+            where: { id },
+            relations: ["types_of_service"]
+        });
+
+        return provider;
     }
 
     async atualizarProvider(id: number, dados: Partial<ProviderPet>): Promise<ProviderPet | undefined> {
