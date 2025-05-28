@@ -5,11 +5,11 @@ import { ProviderRepository } from "../repository/ProviderPetRepository";
 export class ProviderService {
     private repository: ProviderRepository;
 
-    constructor() {
-        this.repository = new ProviderRepository();
+    constructor(repository: ProviderRepository) {
+        this.repository = repository;
     }
 
-    async listarProviders(): Promise<ProviderPet[]> {
+    async listarProvider(): Promise<ProviderPet[]> {
         return await this.repository.listarProvider();
     }
 

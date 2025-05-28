@@ -4,11 +4,11 @@ import { ServicePetController } from '../controller/ServicePetController';
 export const servicePetRotas = (controller: ServicePetController): Router => {
   const router = Router();
 
-  router.post('/', controller.inserirServicePet);
-  router.get('/', controller.listarServicePet);
-  router.get('/:id', controller.buscarPorIdServicePet);
-  router.put('/:id', controller.atualizarServicePet);
-  router.delete('/:id', controller.deletarServicePet);
+router.get('/', controller.listarService.bind(controller));
+router.post('/', controller.inserirService.bind(controller));
+router.get('/:id', controller.buscarPorIdService.bind(controller));
+router.put('/:id', controller.atualizarService.bind(controller));
+router.delete('/:id', controller.deletarService.bind(controller));
 
   return router;
 };

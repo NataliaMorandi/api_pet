@@ -26,11 +26,12 @@ export class ServiceTypeService {
         return serviceType;
     }
 
-    async deletarServiceType(id: number): Promise<void> {
-        const sucesso = await this.repository.deletarServiceType(id);
+    async deletarServiceType(id: number): Promise<boolean> {
+        return await this.repository.deletarServiceType(id);
+        // const sucesso = await this.repository.deletarServiceType(id);
 
-        if (!sucesso) {
-            throw { status: 404, message: "Tipo de serviço não encontrado para deletar" };
-        }
+        // if (!sucesso) {
+        //     throw { status: 404, message: "Tipo de serviço não encontrado para deletar" };
+        // }
     }
 }

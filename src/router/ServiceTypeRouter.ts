@@ -4,11 +4,10 @@ import { ServiceTypeController } from '../controller/ServiceTypeController';
 export const serviceTypeRotas = (controller: ServiceTypeController): Router => {
   const router = Router();
 
-  router.post('/', controller.inserirServiceType);
-  router.get('/', controller.listarServiceTyper);
-  router.get('/:id', controller.buscarPorIdServiceType);
-  router.put('/:id', controller.atualizarServiceType);
-  router.delete('/:id', controller.deletarServiceType);
+  router.get('/', controller.listarServiceType.bind(controller));
+  router.post('/', controller.inserirServiceType.bind(controller));
+  router.get('/:id', controller.buscarPorIdServiceType.bind(controller));
+  router.delete('/:id', controller.deletarServiceType.bind(controller));
 
   return router;
 };
