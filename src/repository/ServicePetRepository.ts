@@ -3,13 +3,12 @@ import { ServicePet } from "../model/ServicePetModel";
 import { Repository } from "typeorm";
 
 export class ServicePetRepository {
-    // private listaProviders: Provider[] = [];
-    // private proximoId: number = 1;
     private repo: Repository<ServicePet>;
 
     constructor() {
         this.repo = AppDataSource.getRepository(ServicePet);
     }
+
 
     async listarServicePet(): Promise<ServicePet[]> {
         return await this.repo.find({

@@ -3,8 +3,6 @@ import { ProviderPet } from "../model/ProviderPetModel";
 import { Repository } from "typeorm";
 
 export class ProviderRepository {
-    // private listaProviders: Provider[] = [];
-    // private proximoId: number = 1;
     private repo: Repository<ProviderPet>;
 
     constructor() {

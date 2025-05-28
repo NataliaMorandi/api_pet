@@ -3,8 +3,6 @@ import { ServiceType } from "../model/ServiceTypeModel";
 import { Repository } from "typeorm";
 
 export class ServiceTypeRepository {
-    // private listaProviders: Provider[] = [];
-    // private proximoId: number = 1;
     private repo: Repository<ServiceType>;
 
     constructor() {
