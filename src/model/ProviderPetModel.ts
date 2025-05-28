@@ -15,6 +15,7 @@ export class ProviderPet {
     @Column()
     telefone?: string;
 
+
     @ManyToMany(() => ServiceType, (type) => type.providers)
     @JoinTable()
     types_of_service?: ServiceType[];

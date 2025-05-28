@@ -1,5 +1,10 @@
 import 'reflect-metadata';
-import { DataSource } from 'typeorm';
+import { DataSource } from "typeorm";
+
+import { ProviderPet } from "./model/ProviderPetModel";
+import { ServicePet } from "./model/ServicePetModel";
+import { ServiceType } from "./model/ServiceTypeModel";
+
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
@@ -9,8 +14,8 @@ export const AppDataSource = new DataSource({
   password: '1234',
   database: 'pet_service',
   synchronize: true, 
-  logging: false,
-  entities: ['src/entities/**/*.ts'],
-  migrations: ['src/migrations/**/*.ts'],
+  logging: true,
+  entities: [ProviderPet, ServicePet, ServiceType],
+  migrations: [],
   subscribers: [],
 });

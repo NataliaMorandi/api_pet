@@ -1,5 +1,8 @@
 import { Router } from 'express';
 import { ProviderController } from '../controller/ProviderPetController';
+import { AppDataSource } from "../data-source";
+import { ProviderPet } from "../model/ProviderPetModel";
+
 
 export const providerRotas = (controller: ProviderController): Router => {
   const router = Router();
