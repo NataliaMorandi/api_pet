@@ -28,7 +28,7 @@ export class ServiceTypeService {
     async deletarServiceType(id: number): Promise<ServiceType> {
         const serviceTypeDeletado = await this.repository.findOneBy({ id });
         if (!serviceTypeDeletado) {
-            throw { status: 404, message: "Provider não encontrado para deletar" };
+            throw { status: 404, message: "Service Type não encontrado para deletar" };
         }
         await this.repository.remove(serviceTypeDeletado); 
         return serviceTypeDeletado;
