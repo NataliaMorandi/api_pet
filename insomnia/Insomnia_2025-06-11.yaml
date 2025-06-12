@@ -1,0 +1,341 @@
+type: collection.insomnia.rest/5.0
+name: My first collection
+meta:
+  id: wrk_967f62fede7a4917b5ec3ab779d01166
+  created: 1748465189465
+  modified: 1748465189465
+collection:
+  - url: http://localhost:3000/api/provider
+    name: inserirProvider
+    meta:
+      id: req_148a1f953d3e447cb14ac631f6aa450f
+      created: 1748465189533
+      modified: 1749173133985
+      isPrivate: false
+      sortKey: -1748465189533
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Clínica SRD",
+          "endereco": "riachuelo 3452",
+          "telefone": "51999999998",
+          "types_of_service": [{ "id": 1 }, { "id": 5 }]
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/provider
+    name: listarProvider
+    meta:
+      id: req_05d5fa7b32d441ba9e97bf5eb4626afc
+      created: 1748465794932
+      modified: 1748996205695
+      isPrivate: false
+      sortKey: -1748465794932
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/provider/9
+    name: buscarProvider
+    meta:
+      id: req_4b7943bdf84b4e09b4d2428ffc3ce5b2
+      created: 1748996247011
+      modified: 1749170977076
+      isPrivate: false
+      sortKey: -1748465189433
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/provider/9
+    name: atualizarProvider
+    meta:
+      id: req_223cf74c4a10475286e2f638b254bfb2
+      created: 1748996279142
+      modified: 1749173481548
+      isPrivate: false
+      sortKey: -1748465189333
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        		"id": 9,
+        		"nome": "Vet Patinhas",
+        		"endereco": "plinio 234",
+        		"telefone": "51999934988",
+        		"types_of_service": [{ "id": 4 }]
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/provider/8
+    name: deletarProvider
+    meta:
+      id: req_2ffc45ee8cf249a2b47af0185183f154
+      created: 1748996309707
+      modified: 1749170651489
+      isPrivate: false
+      sortKey: -1748465189233
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/service
+    name: listarService
+    meta:
+      id: req_459dd9fc17ed48b8abbdc0d0acce7213
+      created: 1748996631077
+      modified: 1748997019799
+      isPrivate: false
+      sortKey: -1748465189133
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/service
+    name: inserirService
+    meta:
+      id: req_b3b129c6285947d8a870781e331435e2
+      created: 1748996652793
+      modified: 1749080313141
+      isPrivate: false
+      sortKey: -1748465189033
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "data_inicio": "04-06-2025",
+        	"data_fim": "07-06-2025",
+        	"types_of_service": [5]
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/service/3
+    name: buscarService
+    meta:
+      id: req_3b3ba88fbb124cd393ec89ab4ceebbc5
+      created: 1748996675445
+      modified: 1748997233986
+      isPrivate: false
+      sortKey: -1748465188933
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/service/3
+    name: atualizarService
+    meta:
+      id: req_8e9c9584b4764b7993a171c83dd71033
+      created: 1748996693179
+      modified: 1748997251078
+      isPrivate: false
+      sortKey: -1748465188833
+    method: PUT
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/service/3
+    name: deletarService
+    meta:
+      id: req_50df56985b854d5aa45c94d3258eec5b
+      created: 1748996718347
+      modified: 1748997253546
+      isPrivate: false
+      sortKey: -1748465188733
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/serviceType
+    name: listarServiceType
+    meta:
+      id: req_6c354591060749058cf4bdc074c3c9b7
+      created: 1748996779803
+      modified: 1748997352864
+      isPrivate: false
+      sortKey: -1748465188633
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/serviceType
+    name: inserirServiceType
+    meta:
+      id: req_c241b68f7412415fa25eefb71033812b
+      created: 1748996806718
+      modified: 1749000685058
+      isPrivate: false
+      sortKey: -1748465188533
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Transporte"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/serviceType/9
+    name: buscarServiceType
+    meta:
+      id: req_ca7e7f26d6584b999fc6398a98f843f7
+      created: 1748996828855
+      modified: 1749080668397
+      isPrivate: false
+      sortKey: -1748465188433
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/api/serviceType/7
+    name: deletarServiceType
+    meta:
+      id: req_ee4c0a59a28c414e8011289737eda845
+      created: 1748996850780
+      modified: 1749080687076
+      isPrivate: false
+      sortKey: -1748465188333
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_1342f388a56aaedcbc9ad8861b2fe8d6cc798706
+    created: 1748465189470
+    modified: 1748465189470
+environments:
+  name: Base Environment
+  meta:
+    id: env_1342f388a56aaedcbc9ad8861b2fe8d6cc798706
+    created: 1748465189468
+    modified: 1748465189468
+    isPrivate: false
