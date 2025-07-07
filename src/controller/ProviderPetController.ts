@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { ProviderService } from '../service/ProviderPetService';
+import { AppDataSource } from '../data-source';
 
 export class ProviderController {
     private service: ProviderService;
@@ -13,10 +14,21 @@ export class ProviderController {
     };
 
     inserirProvider = async (req: Request, res: Response): Promise<void> => {
-        const { nome, endereco, telefone, types_of_service } = req.body;
+        let { nome, endereco, telefone, servicetypehtml } = req.body;
         try {
-            const novoProvider = await this.service.inserirProvider({ nome, endereco, telefone, types_of_service });
-            res.status(201).json(novoProvider);
+
+            if (!servicetypehtml) {
+                servicetypehtml = [];
+            } else if (!Array.isArray(servicetypehtml)) {
+                servicetypehtml = [servicetypehtml];
+            }
+            const serviceTypeRepo = AppDataSource.getRepository(servicetypehtml);
+            const types = await serviceTypeRepo.findByIds(servicetypehtml);
+
+            const novoProvider = await this.service.inserirProvider({ nome, endereco, telefone, types_of_service: types,
+            });
+            // res.status(201).json(novoProvider);
+            res.redirect('/'); // <<<<----
         } catch (error: any) {
             res.status(error.id || 400).json({ message: error.msg || "Erro ao inserir provider" });
         }

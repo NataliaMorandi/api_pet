@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Cadastro Amigo de Pet</title>
+</head>
+<body>
+	<form name="formulario-cadastro" action="/api/provider" method="post">
+
+		<!-- IMAGEM AMIGO PET -->
+		<img src="providerswithpets.png" alt="foto imagem pessoa + animais">	
+
+		<!-- TEXTO SOBRE SER AMIGO PET -->
+		<h3>Cadastro para ser Amigo Pet</h3>
+
+		<ul>
+			<li>Prepara o aluno para iniciar como profissional na área de fotografia</li>
+			<li>Gera a oportunidade de ingressar nos cursos mais avançados, para quem busca uma especialização na área</li>
+			<li>Dá ferramentas para que o aluno consiga realizar um trabalho autoral</li>
+			<li>Possibilita o aumento da qualidade das fotos em mídias sociais</li>
+		</ul>
+
+		<fieldset>
+			<legend><span>Faça o cadastro para ser divulgado como Amigo Pet</span></legend>
+
+			<!-- NOME E SOBRENOME -->
+			<label for="id-nome">Seu nome completo: </label>
+			<input type="text" name="nome" id="id-nome" autofocus placeholder="Nome Completo" required>
+			<br><br>
+
+			<!-- ENDERECO -->
+			<label for="id-endereco">Seu endereço: </label>
+			<input type="text" name="endereco" id="id-endereco" placeholder="Seu endereço" required>
+			<br><br>
+
+			<!-- TELEFONE -->
+			<label for="telefone">Telefone: </label>
+			<input type="tel" name="telefone" id="telefone" minlength="14" maxlength="14" placeholder="(00)00000-0000" required>
+			<br><br>
+
+			<!-- ESCOLHA OS TIPOS DE SERVIÇO -->
+			<span>Trabalho realizando os seguintes serviços: </span><br>
+
+			<input type="checkbox" name="servicetypehtml" value="1" id="pet-sitter">
+			<label for="pet-sitter">Pet Sitter</label><br>
+
+			<input type="checkbox" name="servicetypehtml" value="2" id="pet-walker">
+			<label for="pet-walker">Pet Walker</label><br>
+
+			<input type="checkbox" name="servicetypehtml" value="3" id="hospedagem">
+			<label for="hospedagem">Hospedagem/Hotel para pets</label><br>
+
+			<input type="checkbox" name="servicetypehtml" value="4" id="veterinaria">
+			<label for="veterinaria">Veterinária</label><br>
+
+			<input type="checkbox" name="servicetypehtml" value="5" id="banho-e-tosa">
+			<label for="banho-e-tosa">Banho e tosa</label><br>
+
+			<input type="checkbox" name="servicetypehtml" value="6" id="transporte">
+			<label for="transporte">Transporte de pets</label><br>
+
+			<br><br>
+
+			<!-- BOTÃO ENVIAR -->
+			<input type="submit" name="btn-enviar" value="Enviar minhas informações">
+			<br>
+
+		</fieldset>
+	</form>
+</body>
+</html>

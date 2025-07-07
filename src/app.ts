@@ -44,9 +44,16 @@ export async function initializeApp() {
     app.use('/api/provider', providerRotas(providerController));
     app.use('/api/service', servicePetRotas(serviceController));
     app.use('/api/serviceType', serviceTypeRotas(serviceTypeController));
+    app.use(express.static('src/public'));
+
+    //
+    app.use(express.urlencoded({ extended: true }));
+    app.use(express.json());
+    //
 
     app.get('/', (req, res) => {
-        res.send('API is running');
+        // res.send('API is running');
+        res.sendFile(__dirname + '/public/form.html');
     });
 
     return app;
